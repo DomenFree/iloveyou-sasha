@@ -116,6 +116,66 @@ footer {
   opacity: 0.8;
 }
 
+.gallery {
+  padding: 8vh 0;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  color: #b22222;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-subtitle {
+  font-size: 1.3rem;
+  color: #666;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(196,30,59,0.15);
+  transition: all 0.4s ease;
+  object-fit: cover;
+  aspect-ratio: 4/5; /* делает фото более портретными и романтичными */
+}
+
+.photo-grid img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 16px 48px rgba(196,30,59,0.25);
+  z-index: 2;
+}
+
+.gallery-end {
+  margin-top: 4rem;
+  font-size: 1.3rem;
+  color: #8b1e3f;
+  font-style: italic;
+}
+
+/* Для мобильных — чуть меньше отступов */
+@media (max-width: 600px) {
+  .photo-grid {
+    gap: 1rem;
+  }
+  .photo-grid img {
+    border-radius: 12px;
+  }
+}
+
 /* анимации */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(30px); }
