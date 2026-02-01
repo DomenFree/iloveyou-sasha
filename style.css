@@ -220,7 +220,7 @@ footer {
 /* Чтобы основной контент был под оверлеем */
 main {
   opacity: 0;
-  transition: opacity 1.5s ease 5s; /* появляется после intro */
+  transition: opacity 1.5s ease 2s; /* появляется после intro */
 }
 
 body.loaded main {
