@@ -147,6 +147,44 @@ setTimeout(() => {
   document.body.classList.add('loaded');
 }, 5500); // чуть позже, чем скрытие оверлея
 </script>
+
+  <!-- Кнопка-триггер (поставь её в конце reasons или gallery, например) -->
+<button class="proposal-btn" id="proposalTrigger">А теперь... самый главный вопрос 😏</button>
+
+<!-- Модалка-попап -->
+<div class="proposal-modal" id="proposalModal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+    
+    <div class="proposal-question">
+      <h2>Сашуль...</h2>
+      <p>Ты выйдешь за меня... <strong>через пару годиков?</strong> 💍</p>
+      
+      <div class="buttons">
+        <button class="yes-btn" id="yesBtn">Да! 💕</button>
+        <button class="no-btn" id="noBtn">Пока нет... 😪</button>
+      </div>
+    </div>
+    
+    <!-- Экран "Да!" -->
+    <div class="success-screen hidden" id="successScreen">
+      <div class="ring-animation">
+        <div class="ring">💍</div>
+      </div>
+      <h1>УРААА! ❤️</h1>
+      <p>Значит, в 2030-м встречаемся в ЗАГСе! 🎉<br> Начну прям ща копить на платье</p>
+      <p class="small">Люблю тебя безумно, моя будущая жена ♡</p>
+      <button class="restart-btn" id="restart">Ещё раз спросить?</button>
+    </div>
+    
+    <!-- Экран "Нет" -->
+    <div class="fail-screen hidden" id="failScreen">
+      <h2>Ой... ладно 😢</h2>
+      <p>Подожду ещё пару лет (или 10, если надо)!<br>Но знай что: я не сдаюсь. Ты моя кошечка навсегда ❤️</p>
+      <button class="try-again-btn" id="tryAgain">Передумала? Давай заново!</button>
+    </div>
+  </div>
+</div>
   
 </body>
 </html>
