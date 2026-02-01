@@ -387,24 +387,61 @@ body.loaded main {
   bottom: 20px;
   right: 20px;
   z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(196,30,59,0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
 }
 
 .play-button {
-  padding: 1rem 1.5rem;
+  padding: 0.8rem 1.8rem;
   font-size: 1.2rem;
   background: #c41e3b;
   color: white;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(196,30,59,0.4);
   transition: all 0.3s;
 }
 
-.play-button:hover {
-  transform: scale(1.1);
+.play-button:hover { transform: scale(1.05); }
+.play-button.playing { background: #28a745; }
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
-.play-button.playing {
-  background: #28a745;
+.volume-icon {
+  font-size: 1.4rem;
+}
+
+#volumeSlider {
+  width: 120px;
+  -webkit-appearance: none;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #c41e3b;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#volumeValue {
+  font-size: 0.95rem;
+  min-width: 40px;
+  color: #555;
 }
