@@ -263,3 +263,121 @@ body.loaded main {
   .letter { font-size: 1.3rem; line-height: 1.65; }
   .reasons-grid { gap: 1rem 1.2rem; }
 }
+
+.proposal-btn {
+  display: block;
+  margin: 4rem auto;
+  padding: 1.2rem 3rem;
+  font-size: 1.5rem;
+  background: #c41e3b;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(196,30,59,0.4);
+  transition: all 0.3s;
+}
+
+.proposal-btn:hover {
+  transform: scale(1.1);
+  background: #b22222;
+}
+
+.proposal-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  padding: 3rem;
+  border-radius: 24px;
+  max-width: 90%;
+  width: 500px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(196,30,59,0.5);
+  animation: popIn 0.6s ease-out;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.proposal-question h2 {
+  font-size: 2.8rem;
+  color: #c41e3b;
+  margin-bottom: 1.5rem;
+}
+
+.proposal-question p {
+  font-size: 1.6rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.yes-btn, .no-btn, .restart-btn, .try-again-btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.yes-btn {
+  background: #28a745;
+  color: white;
+}
+
+.yes-btn:hover { background: #218838; transform: scale(1.1); }
+
+.no-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.no-btn:hover { background: #c82333; }
+
+.success-screen, .fail-screen {
+  animation: fadeIn 1s;
+}
+
+.ring-animation {
+  font-size: 8rem;
+  margin: 2rem 0;
+  animation: ringSpin 3s infinite linear;
+}
+
+.ring {
+  display: inline-block;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes ringSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+@keyframes popIn { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+.hidden { display: none !important; }
+
+/* Для мобильных */
+@media (max-width: 500px) {
+  .modal-content { padding: 2rem; }
+  .buttons { flex-direction: column; gap: 1rem; }
+}
