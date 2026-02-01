@@ -150,7 +150,7 @@ footer {
   box-shadow: 0 8px 32px rgba(196,30,59,0.15);
   transition: all 0.4s ease;
   object-fit: cover;
-  aspect-ratio: 4/5; /* делает фото более портретными и романтичными */
+  aspect-ratio: 4/5; 
 }
 
 .photo-grid img:hover {
@@ -175,7 +175,7 @@ footer {
   justify-content: center;
   z-index: 9999;
   transition: opacity 1.5s ease;
-  pointer-events: none; /* чтобы не мешал кликам после */
+  pointer-events: none;
 }
 
 .intro-heart-container {
@@ -206,7 +206,7 @@ footer {
   opacity: 0.9;
 }
 
-/* Анимации */
+
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.08); }
@@ -217,17 +217,17 @@ footer {
   to   { text-shadow: 0 0 40px #ff69b4, 0 0 80px #ff1493, 0 0 120px #ff1493; }
 }
 
-/* Чтобы основной контент был под оверлеем */
+
 main {
   opacity: 0;
-  transition: opacity 1.5s ease 2s; /* появляется после intro */
+  transition: opacity 1.5s ease 2s;
 }
 
 body.loaded main {
   opacity: 1;
 }
 
-/* Для мобильных — чуть меньше отступов */
+
 @media (max-width: 600px) {
   .photo-grid {
     gap: 1rem;
@@ -237,7 +237,7 @@ body.loaded main {
   }
 }
 
-/* анимации */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -258,7 +258,7 @@ body.loaded main {
   }
 }
 
-/* адаптив */
+
 @media (max-width: 480px) {
   .letter { font-size: 1.3rem; line-height: 1.65; }
   .reasons-grid { gap: 1rem 1.2rem; }
@@ -376,7 +376,7 @@ body.loaded main {
 
 .hidden { display: none !important; }
 
-/* Для мобильных */
+
 @media (max-width: 500px) {
   .modal-content { padding: 2rem; }
   .buttons { flex-direction: column; gap: 1rem; }
