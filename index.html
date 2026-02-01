@@ -248,18 +248,45 @@ modal.addEventListener('click', (e) => {
   if (e.target === modal) modal.style.display = 'none';
 });
 
-  const audio = document.getElementById('bgMusic');
-const btn = document.getElementById('playBtn');
+ const audio = document.getElementById('bgMusic');
+const playBtn = document.getElementById('playBtn');
+const volumeSlider = document.getElementById('volumeSlider');
+const volumeValue = document.getElementById('volumeValue');
 
-btn.addEventListener('click', () => {
+// Начальная громкость — 40% (можно изменить на 30, 50 и т.д.)
+audio.volume = 0.40;           // от 0.0 до 1.0
+volumeSlider.value = 40;       // синхронизируем со слайдером
+volumeValue.textContent = '40%';
+
+// Play / Pause
+playBtn.addEventListener('click', () => {
   if (audio.paused) {
     audio.play();
-    btn.textContent = '⏸️ Пауза';
-    btn.classList.add('playing');
+    playBtn.textContent = '⏸️ Пауза';
+    playBtn.classList.add('playing');
   } else {
     audio.pause();
-    btn.textContent = '▶️ Включи песню ❤️';
-    btn.classList.remove('playing');
+    playBtn.textContent = '▶️ Включи песню ❤️';
+    playBtn.classList.remove('playing');
+  }
+});
+
+// Управление громкостью
+volumeSlider.addEventListener('input', () => {
+  const vol = volumeSlider.value / 100;
+  audio.volume = vol;
+  volumeValue.textContent = Math.round(volumeSlider.value) + '%';
+
+  // Меняем иконку в зависимости от громкости (опционально)
+  const icon = document.querySelector('.volume-icon');
+  if (vol === 0) {
+    icon.textContent = '🔇';
+  } else if (vol < 0.3) {
+    icon.textContent = '🔈';
+  } else if (vol < 0.7) {
+    icon.textContent = '🔉';
+  } else {
+    icon.textContent = '🔊';
   }
 });
 
